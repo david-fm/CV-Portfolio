@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Profesional</title>
+    <style>
+      /* Estilos generales */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Sección de video hero */
+      .hero-video {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+      }
+
+      .hero-video video {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        opacity: 0.7;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      .hero-content p {
+        font-size: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Cita Impactante */
+      .quote-section {
+        padding: 100px 20px;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      .quote {
+        font-size: 2rem;
+        font-weight: 300;
+        font-style: italic;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        padding: 40px;
+      }
+
+      .quote:before,
+      .quote:after {
+        content: '"';
+        font-size: 4rem;
+        color: #ddd;
+        position: absolute;
+      }
+
+      .quote:before {
+        top: -20px;
+        left: 0;
+      }
+
+      .quote:after {
+        bottom: -60px;
+        right: 0;
+      }
+
+      /* Slider para la sección hero */
+      .slider-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 30px auto 0;
+        overflow: hidden;
+      }
+
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 300%;
+      }
+
+      .slide {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .slide h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: white;
+      }
+
+      .slide p {
+        font-size: 1.2rem;
+        margin: 0 auto;
+        max-width: 600px;
+      }
+
+      /* Línea de tiempo / Proyectos */
+      .timeline {
+        position: relative;
+        /* margin: 60px auto; */
+        padding: 40px 0;
+        background-color: #f9f9f9;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background-color: #ddd;
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 80px;
+        width: 100%;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: auto;
+        margin-right: 60px;
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .timeline-content {
+        position: relative;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+      }
+
+      .timeline-img {
+        width: fit-content;
+        height: 250px;
+        object-fit: contain;
+        margin-bottom: 15px;
+        /* background-color: #eee; */
+        /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
+      }
+
+      .timeline-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-header {
+        justify-content: flex-end;
+      }
+
+      .timeline-date {
+        background-color: #333;
+        color: white;
+        padding: 4px 12px;
+        font-size: 0.85rem;
+        border-radius: 20px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-date {
+        margin-right: 0;
+        margin-left: 10px;
+        order: 2;
+      }
+
+      .timeline-title {
+        font-size: 1.5rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .timeline-desc {
+        margin-bottom: 15px;
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .timeline-more {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color: #333;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        align-self: flex-start;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-more {
+        align-self: flex-end;
+      }
+
+      .timeline-more:hover {
+        background-color: #555;
+      }
+
+      /* Dot en línea de tiempo */
+      .timeline-dot {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #333;
+        border-radius: 50%;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+
+      /* Modal para más información */
+      /* Estilos base para los modales */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 30px;
+        width: 70%;
+        max-width: 800px;
+        border-radius: 10px;
+        position: relative;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+      }
+
+      .close-modal:hover {
+        background-color: #f0f0f0;
+      }
+
+      .modal-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding-right: 40px; /* Espacio para el botón cerrar */
+      }
+
+      .modal-content h3 {
+        font-size: 1.3rem;
+        margin: 25px 0 10px;
+      }
+
+      .modal-content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .modal .tech-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+
+      .modal .tech-tag {
+        background-color: #f0f0f0;
+        color: #333;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+
+      .modal a.btn-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-right: 10px;
+        transition: background-color 0.3s;
+      }
+
+      .modal a.btn-link:hover {
+        background-color: #555;
+      }
+
+      /* Media queries para responsividad */
+      @media screen and (max-width: 992px) {
+        .modal-content {
+          width: 85%;
+          padding: 25px;
+        }
+
+        .modal-content h2 {
+          font-size: 1.6rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .modal-content {
+          width: 90%;
+          margin: 10% auto;
+          padding: 20px;
+          max-height: 80vh;
+        }
+
+        .modal-content h2 {
+          font-size: 1.5rem;
+          margin-bottom: 15px;
+        }
+
+        .modal-content h3 {
+          font-size: 1.2rem;
+        }
+
+        .modal-content p {
+          font-size: 0.95rem;
+        }
+
+        .close-modal {
+          top: 10px;
+          right: 10px;
+          font-size: 24px;
+          background-color: #f0f0f0;
+          width: 35px;
+          height: 35px;
+          line-height: 35px;
+        }
+
+        .modal .tech-tag {
+          font-size: 0.85rem;
+          padding: 4px 10px;
+        }
+
+        .modal a.btn-link {
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin: 10px 0 0 0;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .modal-content {
+          width: 95%;
+          margin: 5% auto;
+          padding: 15px;
+        }
+
+        .modal-content h2 {
+          font-size: 1.3rem;
+          padding-right: 35px;
+        }
+
+        .close-modal {
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 20px;
+        }
+
+        .modal .tech-skills {
+          gap: 5px;
+        }
+      }
+
+      /* Ajustes para dispositivos táctiles */
+      @media (hover: none) {
+        .close-modal {
+          background-color: #f0f0f0;
+        }
+
+        .modal a.btn-link {
+          padding: 12px 20px; /* Botones más grandes para tocar */
+        }
+      }
+
+      /* Sección de contacto */
+      .contact-section {
+        background-color: #333;
+        color: white;
+        padding: 80px 0;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      .contact-info h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .contact-info p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        margin-top: 30px;
+      }
+
+      .social-links a {
+        display: inline-block;
+        margin-right: 20px;
+        color: white;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: #ddd;
+      }
+
+      .tech-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .tech-tag {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+
+      /* Animaciones al hacer scroll */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.appear {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Footer */
+      footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 992px) {
+        .hero-content {
+          width: 100%;
+        }
+
+        .timeline:before {
+          left: 30px;
+        }
+
+        .timeline-dot {
+          left: 30px;
+          top: 125px;
+        }
+        .timeline-img {
+          max-width: 100%;
+          max-height: 100px;
+        }
+
+        .timeline-content {
+          width: calc(100% - 80px);
+          margin-left: 80px !important;
+          margin-right: 0 !important;
+          text-align: left !important;
+          align-items: flex-start !important;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-header {
+          justify-content: flex-start;
+          flex-direction: row-reverse;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+          margin-right: 10px;
+          margin-left: 0;
+          order: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-more {
+          align-self: flex-start;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero-video video {
+          position: absolute;
+          left: -1000px;
+        }
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.2rem;
+        }
+
+        .quote {
+          font-size: 1.5rem;
+          padding: 20px;
+        }
+
+        .values {
+          flex-direction: column;
+        }
+
+        .value {
+          margin: 10px 0;
+        }
+
+        .modal-content {
+          width: 90%;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sección de video hero -->
+    <section class="hero-video">
+      <!-- Placeholder para el video de fondo -->
+      <video autoplay muted loop>
+        <source src="corto.mov" type="video/mp4" />
+      </video>
+      <div class="hero-content">
+        <h1>Especialista en Inteligencia Artificial</h1>
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slide">
+              <h2>Profesionalidad</h2>
+              <p>
+                Trabajo con dedicación y rigor para entregar soluciones de
+                calidad.
+              </p>
+            </div>
+            <div class="slide">
+              <h2>Foco</h2>
+              <p>
+                No me centro en las tecnologías, sino en resolver problemas
+                eficazmente.
+              </p>
+            </div>
+            <div class="slide">
+              <h2>Didáctica</h2>
+              <p>
+                Disfruto compartiendo conocimiento y comunicando de forma clara
+                y efectiva.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cita Impactante -->
+    <section class="quote-section">
+      <div class="container">
+        <p class="quote fade-in">
+          Mi pasión es resolver problemas reales mediante tecnologías de
+          Inteligencia Artificial, compartiendo conocimiento y manteniendo
+          siempre un enfoque profesional.
+        </p>
+      </div>
+    </section>
+
+    <!-- Línea de tiempo / Proyectos -->
+    <section class="timeline">
+      <div class="container">
+        <!-- Moody -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img
+              class="timeline-img"
+              src="sound-2-svgrepo-com.svg"
+              alt="Proyecto Moody"
+            />
+            <div class="timeline-header">
+              <span class="timeline-date">2023</span>
+              <h2 class="timeline-title">Moody</h2>
+            </div>
+            <p class="timeline-desc">
+              Sistema innovador de correlación audio-imagen mediante redes
+              convolucionales.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-moody"
+              >Más información</a
+            >
+          </div>
+        </div>
+
+        <!-- Clarin PL -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img
+              class="timeline-img"
+              src="https://clarin-pl.eu/_nuxt/img/Logo-horizontal.ce66992.svg"
+              alt="Proyecto Clarin PL"
+            />
+            <div class="timeline-header">
+              <span class="timeline-date">2023</span>
+              <h2 class="timeline-title">Clarin PL</h2>
+            </div>
+            <p class="timeline-desc">
+              Implementación de soluciones NLP para clasificación de escrituras
+              antiguas.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-clarin"
+              >Más información</a
+            >
+          </div>
+        </div>
+
+        <!-- Mavis -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img class="timeline-img" src="mavis.png" alt="Proyecto Mavis" />
+            <div class="timeline-header">
+              <span class="timeline-date">2021</span>
+              <h2 class="timeline-title">Mavis</h2>
+            </div>
+            <p class="timeline-desc">
+              Plataforma web interactiva que transformaba fotografías en
+              experiencias narrativas inmersivas.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-mavis"
+              >Más información</a
+            >
+          </div>
+        </div>
+
+        <!-- Receipt System -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img
+              class="timeline-img"
+              src="receiptIcon.png"
+              alt="Proyecto Receipt System"
+            />
+            <div class="timeline-header">
+              <span class="timeline-date">2024</span>
+              <h2 class="timeline-title">Receipt System</h2>
+            </div>
+            <p class="timeline-desc">
+              Sistema de reconocimiento de tickets basado en Transformers.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-receipt"
+              >Más información</a
+            >
+          </div>
+        </div>
+
+        <!-- Agente virtual Ayuntamiento -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img src="Escudo_de_Pamplona.webp" class="timeline-img" />
+            <div class="timeline-header">
+              <span class="timeline-date">2024</span>
+              <h2 class="timeline-title">Agente Virtual Pamplona</h2>
+            </div>
+            <p class="timeline-desc">
+              Sistema híbrido de búsqueda inteligente para el Ayuntamiento de
+              Pamplona.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-pamplona"
+              >Más información</a
+            >
+          </div>
+        </div>
+
+        <!-- Agente Retail -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img
+              class="timeline-img"
+              src="customer-service-woman-svgrepo-com.png"
+              alt="Proyecto Agente Virtual Retail"
+            />
+            <div class="timeline-header">
+              <span class="timeline-date">2025</span>
+              <h2 class="timeline-title">Agente Virtual Retail</h2>
+            </div>
+            <p class="timeline-desc">
+              Agente conversacional para e-commerce que potencia ventas y
+              optimiza la atención al cliente.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-retail"
+              >Más información</a
+            >
+          </div>
+        </div>
+
+        <!-- Formación Madrid -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img
+              class="timeline-img"
+              src="https://decide.madrid.es/assets/welcome/Decide_Madrid%20-%201%20linea-a28c113551965ba67a1b3ad1e1c066837d834c453b480a4b7086c1817c63eae0.webp"
+              style="width: 80%"
+              alt="Formación Madrid"
+            />
+            <div class="timeline-header">
+              <span class="timeline-date">2025</span>
+              <h2 class="timeline-title">Formación Ayuntamiento de Madrid</h2>
+            </div>
+            <p class="timeline-desc">
+              Capacitación al personal del Ayuntamiento de Madrid en IA
+              Generativa.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-madrid"
+              >Más información</a
+            >
+          </div>
+        </div>
+
+        <!-- Master UMU -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content fade-in">
+            <img
+              class="timeline-img"
+              src="https://imgs.search.brave.com/iN6JPaClJZf_tbmiGUxseGxOKbZFcxQlAkcPxcy_VyQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi85LzkxL1Vu/aXZlcnNpdGFzX1N0/dWRpb3J1bV9NdXJj/aWFuYV9iLXcucG5n/LzIyMHB4LVVuaXZl/cnNpdGFzX1N0dWRp/b3J1bV9NdXJjaWFu/YV9iLXcucG5n"
+              alt="Master UMU"
+            />
+            <div class="timeline-header">
+              <span class="timeline-date">2025</span>
+              <h2 class="timeline-title">Clase Master Big Data UMU</h2>
+            </div>
+            <p class="timeline-desc">
+              Formación especializada en implementación estratégica de IA para
+              transformación empresarial.
+            </p>
+            <a href="#" class="timeline-more" data-modal="modal-umu"
+              >Más información</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info fade-in">
+            <h2>Contacto</h2>
+            <p>
+              ¿Interesado en colaborar en un proyecto o tienes alguna pregunta?
+            </p>
+            <p>
+              Email:
+              <a href="mailto:contact@davidfm.dev" style="color: white"
+                >contact@davidfm.dev</a
+              >
+            </p>
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/david-florez-mazuera-67907a266/"
+                style="color: white"
+                >linkedin.com/in/david-florez-mazuera-67907a266/</a
+              >
+            </p>
+            <p>
+              GitHub:
+              <a href="https://github.com/david-fm" style="color: white"
+                >github.com/david-fm</a
+              >
+            </p>
+          </div>
+
+          <div class="tech-profile fade-in">
+            <h2>Perfil Técnico</h2>
+            <p>
+              Especialista en Inteligencia Artificial con enfoque en
+              Procesamiento de Lenguaje Natural y Agentes.
+            </p>
+
+            <h3 style="margin-top: 20px">Tecnologías</h3>
+            <div class="tech-skills">
+              <span class="tech-tag">Agentes</span>
+              <span class="tech-tag">LLMs</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">LLMs</span>
+              <span class="tech-tag">Transformers</span>
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">Deep Learning</span>
+              <span class="tech-tag">APIs</span>
+              <span class="tech-tag">Data Analysis</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">PostgresDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 - Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <!-- Modales para información detallada -->
+    <!-- Modal Moody -->
+    <div id="modal-moody" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Moody</h2>
+        <p>
+          Primer proyecto significativo en IA aplicada donde lideré una
+          investigación que culminó en implementación práctica. Repliqué un
+          paper científico entrenando un modelo convolucional para transformar
+          audios en vectores, lo que permitió desarrollar junto a mi equipo un
+          sistema innovador que correlaciona imágenes con audios en una base de
+          datos vectorial. Mi contribución principal se centró en el desarrollo
+          y optimización del módulo ModelLibrary, componente crítico para el
+          funcionamiento del sistema.
+        </p>
+        <h3>Tecnologías utilizadas</h3>
+        <div class="tech-skills" style="margin-top: 10px">
+          <span class="tech-tag" style="background-color: #f0f0f0; color: #333"
+            >Python</span
+          >
+          <span class="tech-tag" style="background-color: #f0f0f0; color: #333"
+            >Deep Learning</span
+          >
+          <span class="tech-tag" style="background-color: #f0f0f0; color: #333"
+            >Redes Convolucionales</span
+          >
+          <span class="tech-tag" style="background-color: #f0f0f0; color: #333"
+            >Vectorización</span
+          >
+        </div>
+        <div style="margin-top: 20px">
+          <a
+            href="#"
+            style="
+              display: inline-block;
+              padding: 8px 20px;
+              background-color: #333;
+              color: white;
+              text-decoration: none;
+              border-radius: 5px;
+              margin-right: 10px;
+            "
+            >Ver en GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Clarin PL -->
+    <!-- Modal Moody - Actualizado -->
+    <div id="modal-moody" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Moody</h2>
+        <p>
+          Primer proyecto significativo en IA aplicada donde lideré una
+          investigación que culminó en implementación práctica. Repliqué un
+          paper científico entrenando un modelo convolucional para transformar
+          audios en vectores, lo que permitió desarrollar junto a mi equipo un
+          sistema innovador que correlaciona imágenes con audios en una base de
+          datos vectorial.
+        </p>
+        <p>
+          Mi contribución principal se centró en el desarrollo y optimización
+          del módulo ModelLibrary, componente crítico para el funcionamiento del
+          sistema.
+        </p>
+        <h3>Tecnologías utilizadas</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Deep Learning</span>
+          <span class="tech-tag">Redes Convolucionales</span>
+          <span class="tech-tag">Vectorización</span>
+        </div>
+        <div>
+          <a href="#" class="btn-link">Ver en GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Clarin PL - Actualizado -->
+    <div id="modal-clarin" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Clarin PL</h2>
+        <p>
+          En este proyecto di mis primeras pinceladas en 2023 a una aplicación
+          real en una empresa. En el consolide conceptos y aplique tecnologías
+          NLP para poder clasificar textos en una investigación sobre escrituras
+          antiguas. También aprendí las bases de la limpieza de documentos
+          textuales.
+        </p>
+        <h3>Tecnologías utilizadas</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">Clasificación de texto</span>
+          <span class="tech-tag">Limpieza de datos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Mavis - Actualizado -->
+    <div id="modal-mavis" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Mavis</h2>
+        <p>
+          Participé activamente en el diseño conceptual y desarrollo técnico de
+          una plataforma web innovadora destinada a la presentación de trabajos
+          audiovisuales. Mediante un enfoque centrado en la experiencia del
+          usuario, creamos una página web interactiva que transformaba las
+          fotografías en narrativas visuales inmersivas.
+        </p>
+        <p>
+          Esta página se encuentra fuera de servicio en la actualidad por
+          desgracia.
+        </p>
+        <h3>Tecnologías utilizadas</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Diseño UX/UI</span>
+          <span class="tech-tag">Narrativa visual</span>
+        </div>
+        <div>
+          <a
+            href="https://github.com/david-fm/maviss.github.io/tree/main"
+            target="_blank"
+            class="btn-link"
+            >Ver en GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Receipt System - Actualizado -->
+    <div id="modal-receipt" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Receipt System</h2>
+        <p>
+          Proyecto final de grado galardonado con Matrícula de Honor,
+          consistente en el desarrollo integral de una aplicación móvil
+          conectada a una API con un modelo de lenguaje de mi propia creación.
+          Basado en arquitectura Transformer, el sistema procesaba
+          automáticamente tickets de compra a partir de un dataset que recopilé
+          y etiqueté personalmente.
+        </p>
+        <p>
+          Esta experiencia consolidó mis competencias en entrenamiento de
+          modelos Transformer con PyTorch y estableció una sólida base técnica
+          en el desarrollo de soluciones de IA aplicadas a problemas cotidianos.
+        </p>
+        <h3>Tecnologías utilizadas</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">Transformers</span>
+          <span class="tech-tag">Desarrollo móvil</span>
+          <span class="tech-tag">OCR</span>
+          <span class="tech-tag">API REST</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Agente Virtual Pamplona - Actualizado -->
+    <div id="modal-pamplona" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Agente Virtual Ayuntamiento de Pamplona</h2>
+        <p>
+          Implementé un sistema híbrido innovador que integra tecnologías
+          clásicas y modernas en el campo del procesamiento del lenguaje
+          natural. Desarrollé un agente virtual que utiliza modelos de lenguaje
+          avanzados para transformar consultas de usuarios en formatos
+          estructurados, incorporando capacidades de búsqueda web mediante
+          Google y utilizando técnicas de vectorización para optimizar y
+          reordenar los resultados según su relevancia contextual.
+        </p>
+        <p>
+          Adapté la solución para cumplir con las políticas de seguridad
+          municipales que impedían la implementación de un agente conversacional
+          completo.
+        </p>
+        <h3>Tecnologías utilizadas</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">LLMs</span>
+          <span class="tech-tag">Vectorización</span>
+          <span class="tech-tag">Búsqueda inteligente</span>
+          <span class="tech-tag">Seguridad de datos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Agente Virtual Retail - Actualizado -->
+    <div id="modal-retail" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Agente Virtual para Retail y Ecommerce</h2>
+        <p>
+          Actualmente lidero el desarrollo de un agente conversacional
+          especializado para el sector retail y e-commerce, integrando la
+          plataforma con sistemas de gestión comercial existentes. Este bot
+          multifuncional optimiza tanto la experiencia de venta como la atención
+          al cliente, automatizando procesos comerciales complejos y
+          proporcionando asistencia personalizada en tiempo real a los usuarios.
+        </p>
+        <p>
+          El proyecto sigue en fase de desarrollo e implementación, con
+          resultados preliminares prometedores.
+        </p>
+        <h3>Tecnologías utilizadas</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">Agentes conversacionales</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">LLMs</span>
+          <span class="tech-tag">APIs</span>
+          <span class="tech-tag">Integraciones</span>
+          <span class="tech-tag">E-commerce</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Formación Madrid - Actualizado -->
+    <div id="modal-madrid" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Formación de Ayuntamiento de Madrid</h2>
+        <p>
+          Seleccionado por mi expertise en IA, impartí una formación
+          especializada sobre Inteligencia Artificial Generativa al personal del
+          Ayuntamiento de Madrid. El programa formativo abarcó fundamentos
+          teóricos de modelos de lenguaje, limitaciones técnicas,
+          consideraciones legislativas y casos prácticos de implementación en
+          administraciones públicas.
+        </p>
+        <p>
+          Complementé la formación teórica con una demostración práctica de un
+          agente de atención ciudadana capaz de responder consultas sobre
+          servicios municipales, ilustrando el potencial transformador de estas
+          tecnologías en el sector público.
+        </p>
+        <h3>Contenido de la formación</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">IA Generativa</span>
+          <span class="tech-tag">Modelos de lenguaje</span>
+          <span class="tech-tag">Marco legal</span>
+          <span class="tech-tag">Casos prácticos</span>
+          <span class="tech-tag">Atención ciudadana</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Clase Master UMU - Actualizado -->
+    <div id="modal-umu" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Clase Master de Big Data UMU</h2>
+        <p>
+          Invitado como especialista por la Universidad de Murcia, impartí una
+          clase magistral en el Master de Big Data enfocada en aplicaciones
+          prácticas de los datos y la inteligencia artificial en entornos
+          empresariales.
+        </p>
+        <p>
+          A través de casos de estudio reales y ejemplos prácticos, proporcioné
+          a los estudiantes una visión estratégica sobre cómo implementar
+          soluciones basadas en datos para resolver problemas de negocio
+          concretos, preparándolos para generar impacto inmediato en sus futuras
+          posiciones profesionales.
+        </p>
+        <h3>Temas abordados</h3>
+        <div class="tech-skills">
+          <span class="tech-tag">Big Data</span>
+          <span class="tech-tag">Inteligencia Artificial</span>
+          <span class="tech-tag">Aplicaciones empresariales</span>
+          <span class="tech-tag">Análisis estratégico</span>
+          <span class="tech-tag">Casos de uso prácticos</span>
+        </div>
+      </div>
+    </div>
+    <!-- Más modales para cada proyecto... -->
+
+    <script>
+      // Animación al hacer scroll
+      const faders = document.querySelectorAll(".fade-in");
+
+      const appearOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        appearOnScroll
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      },
+      appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+
+      // Manejo de modales
+      // Manejo de modales con mejoras de accesibilidad y responsive
+      const modals = document.querySelectorAll(".modal");
+      const modalTriggers = document.querySelectorAll(".timeline-more");
+      const closeButtons = document.querySelectorAll(".close-modal");
+
+      // Función para abrir modal
+      function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = "block";
+
+        // Mejora de accesibilidad - enfoque atrapado en el modal
+        document.body.style.overflow = "hidden"; // Evita scroll del cuerpo cuando modal está abierto
+
+        // Focus en el botón de cerrar para accesibilidad
+        const closeButton = modal.querySelector(".close-modal");
+        setTimeout(() => {
+          closeButton.focus();
+        }, 100);
+      }
+
+      // Función para cerrar modal
+      function closeModal(modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Restaura el scroll normal
+      }
+
+      // Abrir modal al hacer clic en los botones de "Más información"
+      modalTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          const modalId = trigger.getAttribute("data-modal");
+          openModal(modalId);
+
+          // Guardar el elemento que activó el modal para devolver el focus después
+          trigger.setAttribute("data-triggered", "true");
+        });
+      });
+
+      // Cerrar modal al hacer clic en el botón X
+      closeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const modal = button.closest(".modal");
+          closeModal(modal);
+
+          // Devolver el focus al botón que abrió el modal
+          const trigger = document.querySelector("[data-triggered='true']");
+          if (trigger) {
+            trigger.focus();
+            trigger.removeAttribute("data-triggered");
+          }
+        });
+      });
+
+      // Cerrar modal al hacer clic fuera del contenido
+      window.addEventListener("click", (e) => {
+        modals.forEach((modal) => {
+          if (e.target === modal) {
+            closeModal(modal);
+
+            // Devolver el focus al botón que abrió el modal
+            const trigger = document.querySelector("[data-triggered='true']");
+            if (trigger) {
+              trigger.focus();
+              trigger.removeAttribute("data-triggered");
+            }
+          }
+        });
+      });
+
+      // Cerrar modal con tecla Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          // Buscar un modal visible
+          modals.forEach((modal) => {
+            if (modal.style.display === "block") {
+              closeModal(modal);
+
+              // Devolver el focus al botón que abrió el modal
+              const trigger = document.querySelector("[data-triggered='true']");
+              if (trigger) {
+                trigger.focus();
+                trigger.removeAttribute("data-triggered");
+              }
+            }
+          });
+        }
+      });
+
+      // Slider automático para la sección hero
+      const slider = document.querySelector(".slider");
+      let slideIndex = 0;
+
+      function moveSlider() {
+        slideIndex = (slideIndex + 1) % 3;
+        slider.style.transform = `translateX(-${slideIndex * 33.333}%)`;
+      }
+
+      // Cambiar slide cada 5 segundos
+      setInterval(moveSlider, 5000);
+    </script>
+  </body>
+</html>
