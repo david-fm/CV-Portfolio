@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>David Flórez Mazuera | Especialista en Inteligencia Artificial</title>
+    <link rel="icon" href="icon.png" type="image/png" />
     <meta property="og:title" content="David Flórez Mazuera | Especialista en Inteligencia Artificial">
     <meta property="og:description" content="Portfolio profesional con proyectos de IA, NLP y agentes conversacionales">
     <meta property="og:image" content="https://davidfm.dev/snap.png">
@@ -45,12 +46,26 @@
 
       .hero-video video {
         position: absolute;
+        top: 0;
         min-width: 100%;
         min-height: 100%;
         width: auto;
         height: auto;
         z-index: 0;
         opacity: 0.7;
+      }
+
+      #video-container-mobile {
+        display: none; /* Oculto por defecto */
+      }
+      
+      #video-container-computer {
+        display: block; /* Visible por defecto */
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
       }
 
       .hero-content {
@@ -592,6 +607,25 @@
       }
 
       @media screen and (max-width: 768px) {
+        #video-container-mobile {
+          display: block;
+        }
+        
+        #video-container-computer {
+          display: none;
+        }
+        
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.2rem;
+        }
+        
+        .slider-container {
+          display: none;
+        }
         .hero-video video {
           position: absolute;
           left: -1000px;
@@ -602,6 +636,10 @@
 
         .hero-content p {
           font-size: 1.2rem;
+        }
+        
+        .slider-container {
+          display: none;
         }
 
         .quote {
@@ -625,12 +663,83 @@
     </style>
   </head>
   <body>
+    <script>
+      // Función para crear y cargar los videos según el dispositivo
+      function loadAppropriateVideo() {
+        // Crear el contenedor para video de computadora
+        const computerContainer = document.createElement('div');
+        computerContainer.id = 'video-container-computer';
+        
+        // Crear el contenedor para video de móvil
+        const mobileContainer = document.createElement('div');
+        mobileContainer.id = 'video-container-mobile';
+        
+        // Determinar si es un dispositivo móvil
+        const isMobile = window.innerWidth <= 768;
+        
+        // Agregar el video apropiado a cada contenedor
+        if (!isMobile) {
+          // Crear video para computadora
+          const videoComputer = document.createElement('video');
+          videoComputer.autoplay = true;
+          videoComputer.muted = true;
+          videoComputer.loop = true;
+          
+          const sourceComputer = document.createElement('source');
+          sourceComputer.src = 'corto.webm';
+          sourceComputer.type = 'video/webm';
+          sourceComputer.id = 'video-computer';
+          
+          videoComputer.appendChild(sourceComputer);
+          computerContainer.appendChild(videoComputer);
+        }
+        
+        if (isMobile) {
+          // Crear video para móvil
+          const videoMobile = document.createElement('video');
+          videoMobile.autoplay = true;
+          videoMobile.muted = true;
+          videoMobile.loop = true;
+          
+          const sourceMobile = document.createElement('source');
+          sourceMobile.src = 'corto_muycorto.webm';
+          sourceMobile.type = 'video/webm';
+          sourceMobile.id = 'video-mobile';
+          
+          videoMobile.appendChild(sourceMobile);
+          mobileContainer.appendChild(videoMobile);
+        }
+        
+        // Limpiar y agregar los contenedores a la sección de video
+        const heroVideo = document.querySelector('.hero-video');
+        
+        // Verificar si ya existen contenedores de video y eliminarlos
+        const existingComputerContainer = document.getElementById('video-container-computer');
+        const existingMobileContainer = document.getElementById('video-container-mobile');
+        
+        if (existingComputerContainer) {
+          heroVideo.removeChild(existingComputerContainer);
+        }
+        
+        if (existingMobileContainer) {
+          heroVideo.removeChild(existingMobileContainer);
+        }
+        
+        // Insertar los contenedores antes del contenido del hero
+        const heroContent = document.querySelector('.hero-content');
+        heroVideo.insertBefore(computerContainer, heroContent);
+        heroVideo.insertBefore(mobileContainer, heroContent);
+      }
+      
+      // Ejecutar la función cuando el DOM esté cargado
+      document.addEventListener('DOMContentLoaded', loadAppropriateVideo);
+      
+      // Volver a evaluar cuando cambie el tamaño de la ventana
+      window.addEventListener('resize', loadAppropriateVideo);
+    </script>
     <!-- Sección de video hero -->
     <section class="hero-video">
-      <!-- Placeholder para el video de fondo -->
-      <video autoplay muted loop>
-        <source src="corto.webm" type="video/mp4" />
-      </video>
+      <!-- Los videos se cargarán dinámicamente con JavaScript -->
       <div class="hero-content">
         <h1>Especialista en Inteligencia Artificial</h1>
         <div class="slider-container">
@@ -676,27 +785,24 @@
     <section class="timeline">
       <div class="container">
         <!-- Moody -->
-        <div class="timeline-item">
+         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content fade-in">
-            <img
-              class="timeline-img"
-              src="sound-2-svgrepo-com.svg"
-              alt="Proyecto Moody"
-            />
+            <img class="timeline-img" src="mavis.png" alt="Proyecto Mavis" />
             <div class="timeline-header">
-              <span class="timeline-date">2023</span>
-              <h2 class="timeline-title">Moody</h2>
+              <span class="timeline-date">2021</span>
+              <h2 class="timeline-title">Mavis</h2>
             </div>
             <p class="timeline-desc">
-              Sistema innovador de correlación audio-imagen mediante redes
-              convolucionales.
+              Plataforma web interactiva que transformaba fotografías en
+              experiencias narrativas inmersivas.
             </p>
-            <a href="#" class="timeline-more" data-modal="modal-moody"
+            <a href="#" class="timeline-more" data-modal="modal-mavis"
               >Más información</a
             >
           </div>
         </div>
+        
 
         <!-- Clarin PL -->
         <div class="timeline-item">
@@ -725,16 +831,20 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content fade-in">
-            <img class="timeline-img" src="mavis.png" alt="Proyecto Mavis" />
+            <img
+              class="timeline-img"
+              src="sound-2-svgrepo-com.svg"
+              alt="Proyecto Moody"
+            />
             <div class="timeline-header">
-              <span class="timeline-date">2021</span>
-              <h2 class="timeline-title">Mavis</h2>
+              <span class="timeline-date">2023</span>
+              <h2 class="timeline-title">Moody</h2>
             </div>
             <p class="timeline-desc">
-              Plataforma web interactiva que transformaba fotografías en
-              experiencias narrativas inmersivas.
+              Sistema innovador de correlación audio-imagen mediante redes
+              convolucionales.
             </p>
-            <a href="#" class="timeline-more" data-modal="modal-mavis"
+            <a href="#" class="timeline-more" data-modal="modal-moody"
               >Más información</a
             >
           </div>
@@ -964,7 +1074,7 @@
         <h2>Clarin PL</h2>
         <p>
           En este proyecto di mis primeras pinceladas en 2023 a una aplicación
-          real en una empresa. En el consolide conceptos y aplique tecnologías
+          real en una empresa. En él, consolidé conceptos y apliqué tecnologías
           NLP para poder clasificar textos en una investigación sobre escrituras
           antiguas. También aprendí las bases de la limpieza de documentos
           textuales.
@@ -999,8 +1109,7 @@
           fotografías en narrativas visuales inmersivas.
         </p>
         <p>
-          Esta página se encuentra fuera de servicio en la actualidad por
-          desgracia.
+          Esta página se encuentra fuera de servicio en la actualidad.
         </p>
         <h3>Tecnologías utilizadas</h3>
         <div class="tech-skills">
@@ -1027,8 +1136,8 @@
         <h2>Receipt System</h2>
         <p>
           Proyecto final de grado galardonado con Matrícula de Honor,
-          consistente en el desarrollo integral de una aplicación móvil
-          conectada a una API con un modelo de lenguaje de mi propia creación.
+          enfocado en el desarrollo integral de una aplicación móvil
+          conectada a una API con un modelo NLP tuneado con un dataset propio.
           Basado en arquitectura Transformer, el sistema procesaba
           automáticamente tickets de compra a partir de un dataset que recopilé
           y etiqueté personalmente.
