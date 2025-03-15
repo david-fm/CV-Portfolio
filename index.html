@@ -477,13 +477,25 @@
         color: #4c5c68;
       }
       .contact-info a {
-        color: #4c5c68;
+        text-decoration: none;
       }
-
-      .contact-info p {
+      .contact-img {
+        width: 200px;
         margin-bottom: 20px;
       }
-      
+      .contact-icon {
+        width: 50px;
+      }
+      .contact-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .social-links {
+        display: flex;
+        justify-content:center;
+        gap: 20px;
+      }
       .tech-profile h2 {
         font-size: 2rem;
         margin-bottom: 30px;
@@ -500,7 +512,6 @@
 
       .social-links a {
         display: inline-block;
-        margin-right: 20px;
         color: #46494c;
         font-size: 1.5rem;
         transition: color 0.3s;
@@ -589,7 +600,9 @@
 
         .contact-grid {
           grid-template-columns: 1fr;
+          padding: 0 60px;
         }
+        
       }
 
       @media screen and (max-width: 768px) {
@@ -626,12 +639,21 @@
           width: 90%;
           padding: 20px;
         }
+        .contact-content {
+          flex-direction: column;
+          gap: 20px;
+        }
       }
+    @media screen and (max-width: 480px) {
+      .contact-grid {
+        padding: 0 20px;
+      }
+    }
       /* Estilos para pantallas grandes */
     @media screen and (min-width: 2100px) {
       /* Contenedor principal más ancho */
       .container {
-        max-width: 1800px;
+        max-width: 2000px;
       }
 
       /* Ajustes para la sección hero */
@@ -709,7 +731,17 @@
         margin-bottom: 40px;
       }
 
-      .contact-info p,
+      .contact-info p {
+        font-size: 2.2rem;
+      }
+      .contact-img {
+        width: 350px;
+        margin-bottom: 30px;
+      }
+      .contact-icon {
+        width: 80px;
+      }
+      
       .tech-profile p {
         font-size: 2.2rem;
         margin-bottom: 25px;
@@ -992,28 +1024,35 @@
         <div class="contact-grid">
           <div class="contact-info fade-in">
             <h2>Contacto</h2>
-            <p>
-              ¿Interesado en colaborar en un proyecto o tienes alguna pregunta?
-            </p>
-            <p>
-              Email:
-              <a href="mailto:contact@davidfm.dev"
-                >contact@davidfm.dev</a
-              >
-            </p>
-            <p>
-              LinkedIn:
-              <a
-                href="https://www.linkedin.com/in/david-florez-mazuera-67907a266/"
-                >linkedin.com/in/david-florez-mazuera-67907a266/</a
-              >
-            </p>
-            <p>
-              GitHub:
-              <a href="https://github.com/david-fm"
-                >github.com/david-fm</a
-              >
-            </p>
+            <div class="contact-content">
+              <img src="photoDavid.jpeg" alt="Foto David Florez Mazuera" class="contact-img">
+              <p>
+                Soy David Florez Mazuera
+                ¿Estas interesado en colaborar en un proyecto o tienes alguna pregunta? Contáctame.
+              </p>
+            </div>
+            <div class="social-links">
+              <a href="mailto:contact@davidfm.dev">
+                <img
+                  src="gmail-svgrepo-com.svg"
+                  alt="Correo electrónico"
+                  class="contact-icon">
+              </a>
+              
+              <a href="https://www.linkedin.com/in/david-florez-mazuera-67907a266/">
+                <img
+                  src="linkedin-svgrepo-com.svg"
+                  alt="LinkedIn"
+                  class="contact-icon">
+              </a>
+              
+              <a href="https://github.com/david-fm">
+                <img
+                  src="github-142-svgrepo-com.svg"
+                  alt="GitHub"
+                  class="contact-icon">
+              </a>
+            </div>
           </div>
 
           <div class="tech-profile fade-in">
