@@ -628,144 +628,129 @@
         }
       }
       /* Estilos para pantallas grandes */
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 2100px) {
       /* Contenedor principal más ancho */
       .container {
-        max-width: 1400px;
-        padding: 0 30px;
+        max-width: 1800px;
       }
-      
-      /* Hero section */
+
+      /* Ajustes para la sección hero */
       .hero-content h1 {
-        font-size: 4.5rem;
-        margin-bottom: 30px;
+        font-size: 10rem;
       }
-      
+
       .slider-container {
-        max-width: 1000px;
-      }
-      
-      .slide h2 {
-        font-size: 2.5rem;
-      }
-      
-      .slide p {
-        font-size: 1.4rem;
-      }
-      
-      /* Cita impactante */
-      .quote {
-        font-size: 2.5rem;
         max-width: 1200px;
+      }
+
+      .slide h2 {
+        font-size: 5.6rem;
+      }
+
+      .slide p {
+        font-size: 3.2rem;
+        max-width: 1600px;
+      }
+
+      /* Sección de cita */
+      .quote {
+        font-size: 3.2rem;
+        max-width: 1600px;
         padding: 60px;
       }
-      
-      /* Timeline y proyectos */
-      .timeline-img {
-        height: 300px;
-      }
-      
-      .timeline-title {
-        font-size: 2rem;
-      }
-      
-      .timeline-desc {
-        font-size: 1.2rem;
-      }
-      
-      .timeline-more {
-        padding: 10px 25px;
-        font-size: 1rem;
-      }
-      
-      /* Sección de contacto */
-      .contact-grid {
-        gap: 80px;
-      }
-      
-      .contact-info h2,
-      .tech-profile h2 {
-        font-size: 2.5rem;
-      }
-      
-      .contact-info p,
-      .tech-profile p {
-        font-size: 1.2rem;
-      }
-      
-      .tech-profile h3 {
-        font-size: 1.5rem;
-        margin-top: 30px;
-      }
-      
-      .tech-tag {
-        font-size: 1rem;
-        padding: 8px 18px;
-      }
-      
-      /* Modales */
-      .modal-content {
-        max-width: 1000px;
-        padding: 40px;
-      }
-      
-      .modal-content h2 {
-        font-size: 2.2rem;
-      }
-      
-      .modal-content h3 {
-        font-size: 1.5rem;
-      }
-      
-      .modal-content p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-      }
-    }
 
-    /* Estilos para pantallas extra grandes */
-    @media screen and (min-width: 1800px) {
-      .container {
-        max-width: 1700px;
-      }
-      
-      .hero-content h1 {
-        font-size: 5rem;
-      }
-      
-      .slider-container {
-        max-width: 1200px;
-      }
-      
-      /* Ajuste para la línea de tiempo */
+      /* Línea de tiempo / Proyectos */
       .timeline:before {
         left: 50%;
       }
-      
-      /* Mejora la experiencia visual en el timeline */
+
       .timeline-content {
-        width: 40%;
+        width: 45%;
       }
       
-      /* Espacio adicional entre los elementos del timeline */
-      .timeline-item {
-        margin-bottom: 120px;
+      .timeline-img {
+        height: 350px;
       }
-      
-      /* Aumenta el tamaño del punto en la línea de tiempo */
-      .timeline-dot {
-        width: 24px;
-        height: 24px;
+
+      .timeline-title {
+        font-size: 4.4rem;
       }
-      
-      /* Mejora la legibilidad del texto */
-      body {
-        font-size: 18px;
+
+      .timeline-date {
+        font-size: 2.4rem;
+        padding: 8px 22px;
+        border-radius: 30px;
       }
-      
-      /* Modal más amplio */
+
+      .timeline-desc {
+        font-size: 2.6rem;
+        margin-bottom: 20px;
+      }
+
+      .timeline-more {
+        padding: 12px 30px;
+        font-size: 2.2rem;
+      }
+
+      /* Sección de contacto */
+      .contact-section {
+        padding: 120px 0;
+      }
+
+      .contact-grid {
+        gap: 100px;
+        max-width: 1800px;
+        margin: 0 auto;
+      }
+
+      .contact-info h2, 
+      .tech-profile h2 {
+        font-size: 4.4rem;
+        margin-bottom: 40px;
+      }
+
+      .contact-info p,
+      .tech-profile p {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+      }
+
+      .tech-profile h3 {
+        font-size: 3rem;
+        margin-top: 30px;
+      }
+
+      .tech-tag {
+        font-size: 2.2rem;
+        padding: 8px 20px;
+      }
+
+      /* Modal para pantallas grandes */
       .modal-content {
-        max-width: 1200px;
+        max-width: 1600px;
+        padding: 40px;
+      }
+
+      .modal-content h2 {
+        font-size: 4.8rem;
+      }
+
+      .modal-content h3 {
+        font-size: 3.6rem;
+      }
+
+      .modal-content p {
+        font-size: 2.6rem;
+        line-height: 1.8;
+      }
+
+      .modal .tech-tag {
+        font-size: 2.2rem;
+      }
+
+      .modal a.btn-link {
+        padding: 12px 30px;
+        font-size: 2.4rem;
       }
     }
 
