@@ -46,26 +46,12 @@
 
       .hero-video video {
         position: absolute;
-        top: 0;
         min-width: 100%;
         min-height: 100%;
         width: auto;
         height: auto;
         z-index: 0;
         opacity: 0.7;
-      }
-
-      #video-container-mobile {
-        display: none; /* Oculto por defecto */
-      }
-      
-      #video-container-computer {
-        display: block; /* Visible por defecto */
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
       }
 
       .hero-content {
@@ -607,25 +593,6 @@
       }
 
       @media screen and (max-width: 768px) {
-        #video-container-mobile {
-          display: block;
-        }
-        
-        #video-container-computer {
-          display: none;
-        }
-        
-        .hero-content h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero-content p {
-          font-size: 1.2rem;
-        }
-        
-        .slider-container {
-          display: none;
-        }
         .hero-video video {
           position: absolute;
           left: -1000px;
@@ -660,86 +627,168 @@
           padding: 20px;
         }
       }
+      /* Estilos para pantallas grandes */
+    @media screen and (min-width: 1400px) {
+      /* Contenedor principal más ancho */
+      .container {
+        max-width: 1400px;
+        padding: 0 30px;
+      }
+      
+      /* Hero section */
+      .hero-content h1 {
+        font-size: 4.5rem;
+        margin-bottom: 30px;
+      }
+      
+      .slider-container {
+        max-width: 1000px;
+      }
+      
+      .slide h2 {
+        font-size: 2.5rem;
+      }
+      
+      .slide p {
+        font-size: 1.4rem;
+      }
+      
+      /* Cita impactante */
+      .quote {
+        font-size: 2.5rem;
+        max-width: 1200px;
+        padding: 60px;
+      }
+      
+      /* Timeline y proyectos */
+      .timeline-img {
+        height: 300px;
+      }
+      
+      .timeline-title {
+        font-size: 2rem;
+      }
+      
+      .timeline-desc {
+        font-size: 1.2rem;
+      }
+      
+      .timeline-more {
+        padding: 10px 25px;
+        font-size: 1rem;
+      }
+      
+      /* Sección de contacto */
+      .contact-grid {
+        gap: 80px;
+      }
+      
+      .contact-info h2,
+      .tech-profile h2 {
+        font-size: 2.5rem;
+      }
+      
+      .contact-info p,
+      .tech-profile p {
+        font-size: 1.2rem;
+      }
+      
+      .tech-profile h3 {
+        font-size: 1.5rem;
+        margin-top: 30px;
+      }
+      
+      .tech-tag {
+        font-size: 1rem;
+        padding: 8px 18px;
+      }
+      
+      /* Modales */
+      .modal-content {
+        max-width: 1000px;
+        padding: 40px;
+      }
+      
+      .modal-content h2 {
+        font-size: 2.2rem;
+      }
+      
+      .modal-content h3 {
+        font-size: 1.5rem;
+      }
+      
+      .modal-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+    }
+
+    /* Estilos para pantallas extra grandes */
+    @media screen and (min-width: 1800px) {
+      .container {
+        max-width: 1700px;
+      }
+      
+      .hero-content h1 {
+        font-size: 5rem;
+      }
+      
+      .slider-container {
+        max-width: 1200px;
+      }
+      
+      /* Ajuste para la línea de tiempo */
+      .timeline:before {
+        left: 50%;
+      }
+      
+      /* Mejora la experiencia visual en el timeline */
+      .timeline-content {
+        width: 40%;
+      }
+      
+      /* Espacio adicional entre los elementos del timeline */
+      .timeline-item {
+        margin-bottom: 120px;
+      }
+      
+      /* Aumenta el tamaño del punto en la línea de tiempo */
+      .timeline-dot {
+        width: 24px;
+        height: 24px;
+      }
+      
+      /* Mejora la legibilidad del texto */
+      body {
+        font-size: 18px;
+      }
+      
+      /* Modal más amplio */
+      .modal-content {
+        max-width: 1200px;
+      }
+    }
+
+    /* Mejoras para el rendimiento en pantallas con alta densidad de píxeles */
+    @media screen and (min-resolution: 192dpi) {
+      .hero-video video {
+        transform: scale(1.2);
+      }
+      
+      .timeline-img {
+        image-rendering: crisp-edges;
+      }
+    }
     </style>
   </head>
   <body>
-    <script>
-      // Función para crear y cargar los videos según el dispositivo
-      function loadAppropriateVideo() {
-        // Crear el contenedor para video de computadora
-        const computerContainer = document.createElement('div');
-        computerContainer.id = 'video-container-computer';
-        
-        // Crear el contenedor para video de móvil
-        const mobileContainer = document.createElement('div');
-        mobileContainer.id = 'video-container-mobile';
-        
-        // Determinar si es un dispositivo móvil
-        const isMobile = window.innerWidth <= 768;
-        
-        // Agregar el video apropiado a cada contenedor
-        if (!isMobile) {
-          // Crear video para computadora
-          const videoComputer = document.createElement('video');
-          videoComputer.autoplay = true;
-          videoComputer.muted = true;
-          videoComputer.loop = true;
-          
-          const sourceComputer = document.createElement('source');
-          sourceComputer.src = 'corto.webm';
-          sourceComputer.type = 'video/webm';
-          sourceComputer.id = 'video-computer';
-          
-          videoComputer.appendChild(sourceComputer);
-          computerContainer.appendChild(videoComputer);
-        }
-        
-        if (isMobile) {
-          // Crear video para móvil
-          const videoMobile = document.createElement('video');
-          videoMobile.autoplay = true;
-          videoMobile.muted = true;
-          videoMobile.loop = true;
-          
-          const sourceMobile = document.createElement('source');
-          sourceMobile.src = 'corto_muycorto.webm';
-          sourceMobile.type = 'video/webm';
-          sourceMobile.id = 'video-mobile';
-          
-          videoMobile.appendChild(sourceMobile);
-          mobileContainer.appendChild(videoMobile);
-        }
-        
-        // Limpiar y agregar los contenedores a la sección de video
-        const heroVideo = document.querySelector('.hero-video');
-        
-        // Verificar si ya existen contenedores de video y eliminarlos
-        const existingComputerContainer = document.getElementById('video-container-computer');
-        const existingMobileContainer = document.getElementById('video-container-mobile');
-        
-        if (existingComputerContainer) {
-          heroVideo.removeChild(existingComputerContainer);
-        }
-        
-        if (existingMobileContainer) {
-          heroVideo.removeChild(existingMobileContainer);
-        }
-        
-        // Insertar los contenedores antes del contenido del hero
-        const heroContent = document.querySelector('.hero-content');
-        heroVideo.insertBefore(computerContainer, heroContent);
-        heroVideo.insertBefore(mobileContainer, heroContent);
-      }
-      
-      // Ejecutar la función cuando el DOM esté cargado
-      document.addEventListener('DOMContentLoaded', loadAppropriateVideo);
-      
-      // Volver a evaluar cuando cambie el tamaño de la ventana
-      window.addEventListener('resize', loadAppropriateVideo);
-    </script>
     <!-- Sección de video hero -->
     <section class="hero-video">
-      <!-- Los videos se cargarán dinámicamente con JavaScript -->
+      <!-- Placeholder para el video de fondo -->
+      <video autoplay muted loop>
+        <source src="corto.webm" type="video/mp4" />
+      </video>
+      
       <div class="hero-content">
         <h1>Especialista en Inteligencia Artificial</h1>
         <div class="slider-container">
