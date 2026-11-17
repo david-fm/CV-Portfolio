@@ -8,11 +8,11 @@
       document.documentElement.classList.add("js");
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>David Flórez Mazuera | Especialista en Inteligencia Artificial</title>
+    <title>David Flórez Mazuera | IA aplicada: agentes, MCP y ML</title>
     <link rel="icon" href="icon.png" type="image/png" />
-    <meta name="description" content="Portfolio profesional de David Flórez Mazuera: especialista en Inteligencia Artificial, Procesamiento de Lenguaje Natural y agentes conversacionales." />
-    <meta property="og:title" content="David Flórez Mazuera | Especialista en Inteligencia Artificial">
-    <meta property="og:description" content="Portfolio profesional con proyectos de IA, NLP y agentes conversacionales">
+    <meta name="description" content="Portfolio profesional de David Flórez Mazuera: sistemas de IA aplicada — agentes sobre MCP, simulación geoepidemiológica en C++ y visión por computador." />
+    <meta property="og:title" content="David Flórez Mazuera | IA aplicada: agentes, MCP y ML">
+    <meta property="og:description" content="Portfolio profesional con proyectos de IA: agentes sobre MCP, IA geográfica y visión por computador">
     <meta property="og:image" content="https://davidfm.dev/snap.png">
     <meta property="og:type" content="website">
 
@@ -682,6 +682,88 @@
         border-color: var(--accent-dim);
       }
 
+      /* ---------- Proyectos paralelos ---------- */
+
+      .parallel {
+        padding-block: var(--space-32);
+        background: var(--surface);
+        border-block: var(--rule);
+      }
+
+      .parallel__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-3);
+      }
+
+      .parallel__card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        padding: var(--space-4);
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        transition: border-color var(--t-2) var(--ease), transform var(--t-3) var(--ease);
+      }
+
+      .parallel__card:hover {
+        border-color: var(--accent-dim);
+        transform: translateY(-2px);
+      }
+
+      .parallel__meta {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: var(--space-2);
+      }
+
+      .parallel__year {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        color: var(--accent-dim);
+      }
+
+      .parallel__title {
+        font-family: var(--font-display);
+        font-size: 1.02rem;
+        font-weight: 400;
+        line-height: 1.25;
+      }
+
+      .parallel__desc {
+        font-size: 0.86rem;
+        line-height: 1.55;
+        color: var(--muted);
+        flex-grow: 1;
+      }
+
+      .parallel__link {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        text-decoration: none;
+        border-top: 1px solid var(--border);
+        padding-top: var(--space-2);
+      }
+
+      .parallel__link:hover {
+        color: var(--text);
+      }
+
+      .badge {
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted-strong);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        padding: 1px 6px;
+        white-space: nowrap;
+      }
+
       /* ---------- Perfil técnico ---------- */
 
       .profile {
@@ -1076,6 +1158,10 @@
       /* ---------- Responsive ---------- */
 
       @media (max-width: 900px) {
+        .parallel__grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .index-row {
           grid-template-columns: 4.5rem minmax(0, 1fr);
           row-gap: var(--space-4);
@@ -1146,6 +1232,7 @@
 
         .proposal,
         .work,
+        .parallel,
         .profile,
         .contact {
           padding-block: var(--space-16);
@@ -1161,6 +1248,12 @@
 
         .hero__scroll {
           display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .parallel__grid {
+          grid-template-columns: minmax(0, 1fr);
         }
       }
 
@@ -1246,6 +1339,7 @@
         <nav class="masthead__nav" aria-label="Secciones del portfolio">
           <a href="#propuesta">Propuesta</a>
           <a href="#trayectoria">Trayectoria</a>
+          <a href="#paralelos">Paralelos</a>
           <a href="#perfil">Perfil</a>
           <a href="#contacto">Contacto</a>
         </nav>
@@ -1339,12 +1433,13 @@
         <div class="container">
           <div class="section-head" data-reveal>
             <span class="mono">01 · Trayectoria</span>
-            <h2>Doce proyectos: de la narrativa visual a los agentes y la IA geográfica</h2>
+            <h2>Doce proyectos, en orden cronológico: de la narrativa visual a los sistemas agénticos</h2>
             <p>
-              Del diseño de experiencias narrativas al NLP aplicado en empresas y
-              a la administración pública, hasta un motor de simulación
-              epidemiológica en C++ y servidores MCP con integraciones reales:
-              cada proyecto resuelve un problema concreto.
+              El hilo va del diseño de experiencias narrativas al NLP aplicado en
+              empresas y a la administración pública, y de ahí a un motor de
+              simulación epidemiológica en C++ y a servidores MCP con
+              integraciones reales. Los más recientes, de 2026, están al final de
+              la lista: MalariaSentinel, Kairo, gawt y MambaVideoClassifier.
             </p>
           </div>
 
@@ -1352,21 +1447,19 @@
             <article class="index-row" data-reveal style="--i: 0">
               <span class="mono index-row__num">01</span>
               <div>
-                <span class="mono index-row__year">2026</span>
-                <h3 class="index-row__title">MalariaSentinel</h3>
+                <span class="mono index-row__year">2021</span>
+                <h3 class="index-row__title">Mavis</h3>
                 <p class="index-row__summary">
-                  Sistema de apoyo a la decisión para la eliminación de la
-                  malaria: simulación geoepidemiológica y riesgo con datos
-                  satelitales.
+                  Plataforma web interactiva que transformaba fotografías en experiencias narrativas inmersivas.
                 </p>
               </div>
-              <button class="index-row__link" type="button" data-modal="modal-malaria">
+              <button class="index-row__link" type="button" data-modal="modal-mavis">
                 Más información
               </button>
               <img
                 class="index-row__thumb"
-                src="assets/malaria-grid.svg"
-                alt="Retícula geográfica con foco de transmisión"
+                src="mavis.png"
+                alt="Mavis"
                 loading="lazy"
                 decoding="async"
                 width="272"
@@ -1377,20 +1470,19 @@
             <article class="index-row" data-reveal style="--i: 1">
               <span class="mono index-row__num">02</span>
               <div>
-                <span class="mono index-row__year">2026</span>
-                <h3 class="index-row__title">Kairo</h3>
+                <span class="mono index-row__year">2023</span>
+                <h3 class="index-row__title">Clarin PL</h3>
                 <p class="index-row__summary">
-                  CMO agéntico servido por MCP: integraciones propias con X y
-                  prospección en Reddit.
+                  Implementación de soluciones NLP para clasificación de escrituras antiguas.
                 </p>
               </div>
-              <button class="index-row__link" type="button" data-modal="modal-kairo">
+              <button class="index-row__link" type="button" data-modal="modal-clarin">
                 Más información
               </button>
               <img
                 class="index-row__thumb"
-                src="assets/kairo-mcp.svg"
-                alt="Servidor MCP con herramientas conectadas"
+                src="assets/clarin-pl-logo.svg"
+                alt="Clarin PL"
                 loading="lazy"
                 decoding="async"
                 width="272"
@@ -1401,20 +1493,19 @@
             <article class="index-row" data-reveal style="--i: 2">
               <span class="mono index-row__num">03</span>
               <div>
-                <span class="mono index-row__year">2026</span>
-                <h3 class="index-row__title">gawt</h3>
+                <span class="mono index-row__year">2024</span>
+                <h3 class="index-row__title">AhorraScan</h3>
                 <p class="index-row__summary">
-                  Servidor MCP para que varios agentes trabajen en el mismo
-                  repositorio Git sin pisarse.
+                  Producto de IA para escanear tickets: API, app móvil, cuotas y clasificación con LLM.
                 </p>
               </div>
-              <button class="index-row__link" type="button" data-modal="modal-gawt">
+              <button class="index-row__link" type="button" data-modal="modal-ahorrascan">
                 Más información
               </button>
               <img
                 class="index-row__thumb"
-                src="assets/gawt-worktree.svg"
-                alt="Worktree compartido con varias ramas"
+                src="receiptIcon.png"
+                alt="AhorraScan"
                 loading="lazy"
                 decoding="async"
                 width="272"
@@ -1425,20 +1516,19 @@
             <article class="index-row" data-reveal style="--i: 3">
               <span class="mono index-row__num">04</span>
               <div>
-                <span class="mono index-row__year">2026</span>
-                <h3 class="index-row__title">MambaVideoClassifier</h3>
+                <span class="mono index-row__year">2024</span>
+                <h3 class="index-row__title">Agente Decide Madrid</h3>
                 <p class="index-row__summary">
-                  Clasificador de vídeo con espacio de estados selectivo
-                  implementado a mano en PyTorch.
+                  Agente conversacional con LangGraph y clasificador de intenciones Rasa sobre datos del Ayuntamiento.
                 </p>
               </div>
-              <button class="index-row__link" type="button" data-modal="modal-mamba">
+              <button class="index-row__link" type="button" data-modal="modal-decide">
                 Más información
               </button>
               <img
                 class="index-row__thumb"
-                src="assets/mamba-ssm.svg"
-                alt="Recurrencia de espacio de estados"
+                src="assets/agente-grafo.svg"
+                alt="Agente Decide Madrid"
                 loading="lazy"
                 decoding="async"
                 width="272"
@@ -1449,36 +1539,42 @@
             <article class="index-row" data-reveal style="--i: 4">
               <span class="mono index-row__num">05</span>
               <div>
-                <span class="mono index-row__year">2021</span>
-                <h3 class="index-row__title">Mavis</h3>
+                <span class="mono index-row__year">2024</span>
+                <h3 class="index-row__title">Agente Virtual Pamplona</h3>
                 <p class="index-row__summary">
-                  Plataforma web interactiva que transformaba fotografías en
-                  experiencias narrativas inmersivas.
+                  Sistema híbrido de búsqueda inteligente para el Ayuntamiento de Pamplona.
                 </p>
               </div>
-              <button class="index-row__link" type="button" data-modal="modal-mavis">
+              <button class="index-row__link" type="button" data-modal="modal-pamplona">
                 Más información
               </button>
-              <img class="index-row__thumb index-row__thumb--cover" src="mavis.png" alt="Captura del proyecto Mavis" loading="lazy" width="272" height="204" />
+              <img
+                class="index-row__thumb"
+                src="Escudo_de_Pamplona.webp"
+                alt="Agente Virtual Pamplona"
+                loading="lazy"
+                decoding="async"
+                width="272"
+                height="204"
+              />
             </article>
 
             <article class="index-row" data-reveal style="--i: 5">
               <span class="mono index-row__num">06</span>
               <div>
-                <span class="mono index-row__year">2023</span>
-                <h3 class="index-row__title">Clarin PL</h3>
+                <span class="mono index-row__year">2025</span>
+                <h3 class="index-row__title">Agente Virtual Retail</h3>
                 <p class="index-row__summary">
-                  Implementación de soluciones NLP para clasificación de escrituras
-                  antiguas.
+                  Agente conversacional para e-commerce que potencia ventas y optimiza la atención al cliente.
                 </p>
               </div>
-              <button class="index-row__link" type="button" data-modal="modal-clarin">
+              <button class="index-row__link" type="button" data-modal="modal-retail">
                 Más información
               </button>
               <img
                 class="index-row__thumb"
-                src="assets/clarin-pl-logo.svg"
-                alt="Logotipo del proyecto Clarin PL"
+                src="customer-service-woman-svgrepo-com.png"
+                alt="Agente Virtual Retail"
                 loading="lazy"
                 decoding="async"
                 width="272"
@@ -1489,81 +1585,10 @@
             <article class="index-row" data-reveal style="--i: 6">
               <span class="mono index-row__num">07</span>
               <div>
-                <span class="mono index-row__year">2023</span>
-                <h3 class="index-row__title">Moody</h3>
-                <p class="index-row__summary">
-                  Sistema innovador de correlación audio-imagen mediante redes
-                  convolucionales.
-                </p>
-              </div>
-              <button class="index-row__link" type="button" data-modal="modal-moody">
-                Más información
-              </button>
-              <img class="index-row__thumb" src="sound-2-svgrepo-com.svg" alt="Icono del proyecto Moody" loading="lazy" width="272" height="204" />
-            </article>
-
-            <article class="index-row" data-reveal style="--i: 7">
-              <span class="mono index-row__num">08</span>
-              <div>
-                <span class="mono index-row__year">2024</span>
-                <h3 class="index-row__title">Receipt System</h3>
-                <p class="index-row__summary">
-                  Sistema de reconocimiento de tickets basado en Transformers.
-                </p>
-              </div>
-              <button class="index-row__link" type="button" data-modal="modal-receipt">
-                Más información
-              </button>
-              <img class="index-row__thumb" src="receiptIcon.png" alt="Icono del proyecto Receipt System" loading="lazy" width="272" height="204" />
-            </article>
-
-            <article class="index-row" data-reveal style="--i: 8">
-              <span class="mono index-row__num">09</span>
-              <div>
-                <span class="mono index-row__year">2024</span>
-                <h3 class="index-row__title">Agente Virtual Pamplona</h3>
-                <p class="index-row__summary">
-                  Sistema híbrido de búsqueda inteligente para el Ayuntamiento de
-                  Pamplona.
-                </p>
-              </div>
-              <button class="index-row__link" type="button" data-modal="modal-pamplona">
-                Más información
-              </button>
-              <img class="index-row__thumb" src="Escudo_de_Pamplona.webp" alt="Escudo del Ayuntamiento de Pamplona" loading="lazy" width="272" height="204" />
-            </article>
-
-            <article class="index-row" data-reveal style="--i: 9">
-              <span class="mono index-row__num">10</span>
-              <div>
-                <span class="mono index-row__year">2025</span>
-                <h3 class="index-row__title">Agente Virtual Retail</h3>
-                <p class="index-row__summary">
-                  Agente conversacional para e-commerce que potencia ventas y
-                  optimiza la atención al cliente.
-                </p>
-              </div>
-              <button class="index-row__link" type="button" data-modal="modal-retail">
-                Más información
-              </button>
-              <img
-                class="index-row__thumb"
-                src="customer-service-woman-svgrepo-com.png"
-                alt="Icono del proyecto Agente Virtual Retail"
-                loading="lazy"
-                width="272"
-                height="204"
-              />
-            </article>
-
-            <article class="index-row" data-reveal style="--i: 10">
-              <span class="mono index-row__num">11</span>
-              <div>
                 <span class="mono index-row__year">2025</span>
                 <h3 class="index-row__title">Formación Ayuntamiento de Madrid</h3>
                 <p class="index-row__summary">
-                  Capacitación al personal del Ayuntamiento de Madrid en IA
-                  Generativa.
+                  Capacitación al personal del Ayuntamiento de Madrid en IA Generativa.
                 </p>
               </div>
               <button class="index-row__link" type="button" data-modal="modal-madrid">
@@ -1572,7 +1597,99 @@
               <img
                 class="index-row__thumb"
                 src="assets/escudo-madrid.svg"
-                alt="Escudo del Ayuntamiento de Madrid"
+                alt="Formación Ayuntamiento de Madrid"
+                loading="lazy"
+                decoding="async"
+                width="272"
+                height="204"
+              />
+            </article>
+
+            <article class="index-row" data-reveal style="--i: 7">
+              <span class="mono index-row__num">08</span>
+              <div>
+                <span class="mono index-row__year">2025</span>
+                <h3 class="index-row__title">Clase Master Big Data UMU</h3>
+                <p class="index-row__summary">
+                  Formación especializada en implementación estratégica de IA para transformación empresarial.
+                </p>
+              </div>
+              <button class="index-row__link" type="button" data-modal="modal-umu">
+                Más información
+              </button>
+              <img
+                class="index-row__thumb"
+                src="assets/logo-umu.jpg"
+                alt="Clase Master Big Data UMU"
+                loading="lazy"
+                decoding="async"
+                width="272"
+                height="204"
+              />
+            </article>
+
+            <article class="index-row" data-reveal style="--i: 8">
+              <span class="mono index-row__num">09</span>
+              <div>
+                <span class="mono index-row__year">2026</span>
+                <h3 class="index-row__title">MalariaSentinel</h3>
+                <p class="index-row__summary">
+                  Sistema de apoyo a la decisión para la eliminación de la malaria: simulación geoepidemiológica y riesgo con datos satelitales.
+                </p>
+              </div>
+              <button class="index-row__link" type="button" data-modal="modal-malaria">
+                Más información
+              </button>
+              <img
+                class="index-row__thumb"
+                src="assets/malaria-grid.svg"
+                alt="MalariaSentinel"
+                loading="lazy"
+                decoding="async"
+                width="272"
+                height="204"
+              />
+            </article>
+
+            <article class="index-row" data-reveal style="--i: 9">
+              <span class="mono index-row__num">10</span>
+              <div>
+                <span class="mono index-row__year">2026</span>
+                <h3 class="index-row__title">Kairo</h3>
+                <p class="index-row__summary">
+                  CMO agéntico servido por MCP: integraciones propias con X y prospección en Reddit.
+                </p>
+              </div>
+              <button class="index-row__link" type="button" data-modal="modal-kairo">
+                Más información
+              </button>
+              <img
+                class="index-row__thumb"
+                src="assets/kairo-mcp.svg"
+                alt="Kairo"
+                loading="lazy"
+                decoding="async"
+                width="272"
+                height="204"
+              />
+            </article>
+
+            <article class="index-row" data-reveal style="--i: 10">
+              <span class="mono index-row__num">11</span>
+              <div>
+                <span class="mono index-row__year">2026</span>
+                <h3 class="index-row__title">gawt</h3>
+                <p class="index-row__summary">
+                  Servidor MCP para que varios agentes trabajen en el mismo repositorio Git sin pisarse.
+                </p>
+              </div>
+              <button class="index-row__link" type="button" data-modal="modal-gawt">
+                Más información
+              </button>
+              <img
+                class="index-row__thumb"
+                src="assets/gawt-worktree.svg"
+                alt="gawt"
                 loading="lazy"
                 decoding="async"
                 width="272"
@@ -1583,25 +1700,176 @@
             <article class="index-row" data-reveal style="--i: 11">
               <span class="mono index-row__num">12</span>
               <div>
-                <span class="mono index-row__year">2025</span>
-                <h3 class="index-row__title">Clase Master Big Data UMU</h3>
+                <span class="mono index-row__year">2026</span>
+                <span class="badge">Práctica de grado</span>
+                <h3 class="index-row__title">MambaVideoClassifier</h3>
                 <p class="index-row__summary">
-                  Formación especializada en implementación estratégica de IA para
-                  transformación empresarial.
+                  Clasificador de vídeo con espacio de estados selectivo implementado a mano en PyTorch.
                 </p>
               </div>
-              <button class="index-row__link" type="button" data-modal="modal-umu">
+              <button class="index-row__link" type="button" data-modal="modal-mamba">
                 Más información
               </button>
               <img
                 class="index-row__thumb"
-                src="assets/logo-umu.jpg"
-                alt="Logotipo de la Universidad de Murcia"
+                src="assets/mamba-ssm.svg"
+                alt="MambaVideoClassifier"
                 loading="lazy"
                 decoding="async"
                 width="272"
                 height="204"
               />
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Proyectos paralelos: piezas pequeñas y actividad reciente -->
+      <section class="parallel" id="paralelos">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="mono">02 · Proyectos paralelos</span>
+            <h2>Doce piezas pequeñas, y la constancia de seguir construyendo</h2>
+            <p>
+              Herramientas, juegos, ejercicios de grado y contribuciones a
+              proyectos de otros autores: piezas que no son el centro de mi
+              trabajo, pero que muestran que la actividad no se detiene entre
+              proyectos grandes.
+            </p>
+          </div>
+
+          <div class="parallel__grid" data-reveal>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2022</span>
+                <span class="badge">Práctica de grado</span>
+              </div>
+              <h3 class="parallel__title">Compiladores miniC</h3>
+              <p class="parallel__desc">
+                Compilador de un lenguaje propio: Flex, Bison, tabla de símbolos tipada y generación de código MIPS.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/compiladores" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2023</span>
+              </div>
+              <h3 class="parallel__title">Moody</h3>
+              <p class="parallel__desc">
+                Mi primer proyecto serio de IA aplicada: entrené una red convolucional para
+                transformar audio en vectores y desarrollé el módulo ModelLibrary de un
+                sistema que correlaciona imágenes y audio. Contribución a un proyecto de
+                código abierto de otro autor.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/saul101s/Moody" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2024</span>
+                <span class="badge">Trabajo Fin de Grado</span>
+              </div>
+              <h3 class="parallel__title">TFG: tickets sintéticos</h3>
+              <p class="parallel__desc">
+                Trabajo Fin de Grado: generador de tickets de compra sintéticos con OpenCV para entrenar modelos de extracción.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/CAT" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2025</span>
+                <span class="badge">Práctica de grado</span>
+              </div>
+              <h3 class="parallel__title">ML1 en Julia</h3>
+              <p class="parallel__desc">
+                Análisis de datos con Julia y MLJ: PCA, ICA, t-SNE, SVM y modelos de boosting.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/ml1-crimes-analysis-julia" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+                <span class="badge">Práctica de grado</span>
+              </div>
+              <h3 class="parallel__title">scikit-opt-experiments</h3>
+              <p class="parallel__desc">
+                Laboratorio de computación evolutiva: GA, RCGA y PSO con diagnósticos visuales en GIF.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/scikit-opt-experiments" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+              </div>
+              <h3 class="parallel__title">yt-tools</h3>
+              <p class="parallel__desc">
+                CLI para crear playlists de YouTube con OAuth2, reintentos con backoff y deduplicación.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/yt-tools" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+              </div>
+              <h3 class="parallel__title">MindMaps</h3>
+              <p class="parallel__desc">
+                Generador de mapas mentales en el navegador, con kit de prompts preparado para LLMs.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/MindMaps" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+                <span class="badge">Práctica de grado</span>
+              </div>
+              <h3 class="parallel__title">EU AI Act</h3>
+              <p class="parallel__desc">
+                Paquete de evaluación de riesgo: sesgos con fairlearn, stress tests, FMEA con RPN e informes en PDF.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/EU_AI_ACT" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+                <span class="badge">Práctica de grado</span>
+              </div>
+              <h3 class="parallel__title">dl-p3-latent-space</h3>
+              <p class="parallel__desc">
+                Autoencoders y clasificación en espacio latente sobre STL-10, con ablación de estrategias de ajuste.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/dl-p3-latent-space" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+                <span class="badge">Práctica de grado</span>
+              </div>
+              <h3 class="parallel__title">cv2-pix2pixhd</h3>
+              <p class="parallel__desc">
+                Pix2PixHD con generador propio para segmentar núcleos celulares sobre MoNuSeg.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/cv2-pix2pixhd" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+              </div>
+              <h3 class="parallel__title">langfuse-pi4-deploy</h3>
+              <p class="parallel__desc">
+                Langfuse v4 autoalojado en Raspberry Pi 4, con imagen propia de ClickHouse para ARMv8.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/langfuse-pi4-deploy" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+            </article>
+            <article class="parallel__card">
+              <div class="parallel__meta">
+                <span class="mono parallel__year">2026</span>
+              </div>
+              <h3 class="parallel__title">jincana</h3>
+              <p class="parallel__desc">
+                Juego de geolocalización en el navegador: pistas por GPS, distancia por Haversine y formato de archivo propio.
+              </p>
+              <a class="parallel__link mono" href="https://github.com/david-fm/jincana" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
             </article>
           </div>
         </div>
@@ -1647,7 +1915,7 @@
             <dl class="ficha">
               <div class="ficha__row">
                 <dt class="mono ficha__key">Proyectos</dt>
-                <dd class="ficha__value">12 (2021 · 2026)</dd>
+                <dd class="ficha__value">12 + 12 paralelos (2021 · 2026)</dd>
               </div>
               <div class="ficha__row">
                 <dt class="mono ficha__key">Enfoque</dt>
@@ -1752,57 +2020,72 @@
       </div>
     </div>
 
-    <div id="modal-moody" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-moody-title" aria-hidden="true">
+            <div id="modal-ahorrascan" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-ahorrascan-title" aria-hidden="true">
       <div class="modal__panel">
         <button class="modal__close" type="button" aria-label="Cerrar">&times;</button>
-        <h2 id="modal-moody-title">Moody</h2>
+        <h2 id="modal-ahorrascan-title">AhorraScan</h2>
         <p>
-          Primer proyecto significativo en IA aplicada donde lideré una
-          investigación que culminó en implementación práctica. Repliqué un
-          paper científico entrenando un modelo convolucional para transformar
-          audios en vectores, lo que permitió desarrollar junto a mi equipo un
-          sistema innovador que correlaciona imágenes con audios en una base de
-          datos vectorial.
+          Un producto completo, no solo un modelo: una app móvil en Expo y React
+          Native (cámara, Stripe y almacenamiento seguro) hablando con una API en
+          FastAPI con JWT, SQLAlchemy y PostgreSQL, cuotas por plan y webhooks
+          de suscripción.
         </p>
         <p>
-          Mi contribución principal se centró en el desarrollo y optimización
-          del módulo ModelLibrary, componente crítico para el funcionamiento del
-          sistema.
+          El núcleo es un grafo de LangGraph que convierte el ticket en imagen y
+          clasifica cada producto con un LLM (Vertex AI) usando salidas
+          estructuradas y coincidencia difusa contra el catálogo, con trazas de
+          cada llamada en Langfuse. El proyecto nació de mi Trabajo Fin de Grado,
+          galardonado con Matrícula de Honor: generé y etiqueté un dataset propio
+          de tickets sintéticos con OpenCV y entrené un modelo Donut para OCR de
+          documentos, servido tras autenticación JWT.
         </p>
         <h3>Tecnologías utilizadas</h3>
         <div class="modal__tags">
           <span class="tech-tag">Python</span>
-          <span class="tech-tag">Deep Learning</span>
-          <span class="tech-tag">Redes Convolucionales</span>
-          <span class="tech-tag">Vectorización</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">React Native</span>
+          <span class="tech-tag">Expo</span>
+          <span class="tech-tag">LangGraph</span>
+          <span class="tech-tag">Vertex AI</span>
+          <span class="tech-tag">Stripe</span>
+          <span class="tech-tag">JWT</span>
+          <span class="tech-tag">SQLAlchemy</span>
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">Donut</span>
+          <span class="tech-tag">OpenCV</span>
+          <span class="tech-tag">Langfuse</span>
+          <span class="tech-tag">Docker</span>
         </div>
-        <a class="modal__link" href="https://github.com/saul101s/Moody/tree/main" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+        <a class="modal__link" href="https://github.com/david-fm/reciept-functions" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
       </div>
     </div>
 
-    <div id="modal-receipt" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-receipt-title" aria-hidden="true">
+    <div id="modal-decide" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-decide-title" aria-hidden="true">
       <div class="modal__panel">
         <button class="modal__close" type="button" aria-label="Cerrar">&times;</button>
-        <h2 id="modal-receipt-title">Receipt System</h2>
+        <h2 id="modal-decide-title">Agente Decide Madrid</h2>
         <p>
-          Proyecto final de grado galardonado con Matrícula de Honor, enfocado
-          en el desarrollo integral de una aplicación móvil conectada a una API
-          con un modelo NLP tuneado con un dataset propio. Basado en arquitectura
-          Transformer, el sistema procesaba automáticamente tickets de compra a
-          partir de un dataset que recopilé y etiqueté personalmente.
+          Agente conversacional para el Decide Madrid del Ayuntamiento de
+          Madrid. El grafo de LangGraph clasifica la intención y enruta la
+          conversación hacia tres flujos —debate, propuestas y consultas—, con
+          las herramientas que consultan la API municipal en cada uno.
         </p>
         <p>
-          Esta experiencia consolidó mis competencias en entrenamiento de modelos
-          Transformer con PyTorch y estableció una sólida base técnica en el
-          desarrollo de soluciones de IA aplicadas a problemas cotidianos.
+          El clasificador de intenciones es un modelo Rasa entrenado con reglas
+          y stories, y la base de conocimiento se indexa en una base vectorial
+          (Chroma) para responder con el FAQ oficial. Todo el desarrollo propio
+          son unas 2.600 líneas sobre el toolkit de código abierto
+          <em>agent-service-toolkit</em> (MIT) de JoshuaC215, que aportó la
+          base de LangGraph, FastAPI y Docker del proyecto.
         </p>
         <h3>Tecnologías utilizadas</h3>
         <div class="modal__tags">
-          <span class="tech-tag">PyTorch</span>
-          <span class="tech-tag">Transformers</span>
-          <span class="tech-tag">Desarrollo móvil</span>
-          <span class="tech-tag">OCR</span>
-          <span class="tech-tag">API REST</span>
+          <span class="tech-tag">LangGraph</span>
+          <span class="tech-tag">Rasa</span>
+          <span class="tech-tag">Chroma</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Agentes</span>
         </div>
       </div>
     </div>
@@ -1951,7 +2234,8 @@
           Kairo es un CMO agéntico en forma de servidor MCP (57 herramientas
           sobre Cloudflare Workers, D1, Queues, cron y OAuth 2.1) creado por
           Juancho Prego Gundín para la hackathon del 13 de noviembre de 2026. Yo
-          entré como colaborador: seis de los 68 commits son míos.
+          entré como colaborador: seis de los 68 commits son míos. El
+          repositorio es privado, así que aquí enlazo al producto en producción.
         </p>
         <p>
           Mi trabajo fue la integración con X. Congelé el contrato HTTP
@@ -1972,8 +2256,17 @@
           operador con Playwright, sin API ni endpoints ocultos, con limitación
           de ritmo humana, almacén SQLite, scoring de intención con evidencia y
           traza de auditoría. En total, 69 tests de Python en verde y el typecheck
-          limpio. La integración con Google Maps que forma parte del producto
-          la implementó el equipo de Juancho.
+          limpio.
+        </p>
+        <p>
+          También es mía la integración con Google Maps: la llevé en la rama
+          <code>feat/kairo-maps</code> y la entregué como pull request. consisted
+          en reimplementar en TypeScript las seis herramientas del servidor
+          Python —Places API (New) y Geocoding— como herramientas nativas del
+          Worker, con el modelo de coste por SKU y máscara de campos, cuotas por
+          workspace, caché en D1, el escaneo de negocios como leads y un banco de
+          pruebas de paridad que compara petición y normalización contra la
+          implementación original y falla ante cualquier divergencia.
         </p>
         <h3>Tecnologías utilizadas</h3>
         <div class="modal__tags">
@@ -1988,7 +2281,7 @@
           <span class="tech-tag">Vitest</span>
           <span class="tech-tag">Pytest</span>
         </div>
-        <a class="modal__link" href="https://github.com/Juancho1162/cmo-agentico" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+        <a class="modal__link" href="https://getkairo.es" target="_blank" rel="noopener noreferrer">Ver el producto</a>
       </div>
     </div>
 
@@ -2050,11 +2343,12 @@
           congeladas y preentrenadas en ImageNet.
         </p>
         <p>
-          Sobre WLASL300 (5.117 clips de 15 clases, 16 fotogramas de 224×224) el
-          modelo alcanza un top-1 del 37,75 %, un top-5 del 67,96 % y un F1
-          macro de 0,3469, con 4,17 M parámetros; la inferencia en CPU es de
-          241 ms por vídeo (4,2 vídeos por segundo). La ablación V1 → V2
-          (27,83 % → 37,75 %) deja por escrito de dónde sale cada punto de
+          Sobre WLASL300 (las 300 clases más frecuentes, 5.117 clips, 16
+          fotogramas de 224×224) el modelo alcanza un top-1 del 37,75 %, un
+          top-5 del 67,96 % y un F1 macro de 0,347, con 4,17 M parámetros; la
+          inferencia en CPU es de 241 ms por vídeo (4,2 vídeos por segundo), el
+          perfil que importa para el despliegue en el borde. La ablación
+          V1 → V2 (+9,92 puntos de top-1) deja por escrito de dónde sale cada
           mejora, y los pesos están publicados en Hugging Face.
         </p>
         <h3>Tecnologías utilizadas</h3>

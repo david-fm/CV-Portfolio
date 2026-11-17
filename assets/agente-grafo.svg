@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 204" role="img" aria-label="Grafo de un agente con decisión y herramientas">
+  <g fill="none" stroke="#5c4a34" stroke-width="1.5">
+    <path d="M136 96L60 52M136 96l76-44M136 96l-60 58M136 96l78 52" />
+  </g>
+  <g fill="#0e0a06" stroke="#bd9762" stroke-width="2">
+    <rect x="116" y="76" width="40" height="40" rx="6" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="1.6">
+    <path d="M126 88v16M136 88v16M146 88v16M126 96h20" />
+  </g>
+  <g fill="#bd9762">
+    <circle cx="60" cy="52" r="8" />
+    <circle cx="212" cy="52" r="8" />
+    <circle cx="76" cy="154" r="8" />
+    <circle cx="214" cy="148" r="8" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="1.4" opacity="0.6">
+    <circle cx="60" cy="52" r="14" />
+    <circle cx="212" cy="52" r="14" />
+    <circle cx="76" cy="154" r="14" />
+    <circle cx="214" cy="148" r="14" />
+  </g>
+</svg>
