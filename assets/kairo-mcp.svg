@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 204" role="img" aria-label="Servidor MCP con herramientas conectadas">
+  <g fill="none" stroke="#5c4a34" stroke-width="1.5">
+    <path d="M136 102L58 44M136 102l78-58M136 102l-72 56M136 102l86 50" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="2">
+    <path d="M136 102L58 44M136 102l78-58M136 102l-72 56M136 102l86 50" stroke-dasharray="1 0" />
+  </g>
+  <g fill="#0e0a06" stroke="#bd9762" stroke-width="2">
+    <rect x="112" y="78" width="48" height="48" rx="8" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="1.6">
+    <path d="M124 94v16M136 94v16M148 94v16M124 102h24" />
+  </g>
+  <g fill="#bd9762">
+    <circle cx="58" cy="44" r="9" />
+    <circle cx="214" cy="44" r="9" />
+    <circle cx="64" cy="158" r="9" />
+    <circle cx="222" cy="152" r="9" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="1.5" opacity="0.75">
+    <circle cx="58" cy="44" r="16" opacity="0.4" />
+    <circle cx="214" cy="44" r="16" opacity="0.4" />
+    <circle cx="64" cy="158" r="16" opacity="0.4" />
+    <circle cx="222" cy="152" r="16" opacity="0.4" />
+  </g>
+</svg>

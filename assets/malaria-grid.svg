@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 204" role="img" aria-label="Retícula geográfica con foco de transmisión">
+  <g transform="translate(0,16)">
+  <g fill="none" stroke="#6b5a41" stroke-width="1.5">
+    <rect x="26" y="26" width="44" height="38" rx="2" />
+    <rect x="74" y="26" width="44" height="38" rx="2" />
+    <rect x="122" y="26" width="44" height="38" rx="2" />
+    <rect x="170" y="26" width="44" height="38" rx="2" />
+    <rect x="218" y="26" width="28" height="38" rx="2" />
+    <rect x="26" y="68" width="44" height="38" rx="2" />
+    <rect x="74" y="68" width="44" height="38" rx="2" />
+    <rect x="122" y="68" width="44" height="38" rx="2" />
+    <rect x="170" y="68" width="44" height="38" rx="2" />
+    <rect x="218" y="68" width="28" height="38" rx="2" />
+    <rect x="26" y="110" width="44" height="38" rx="2" />
+    <rect x="74" y="110" width="44" height="38" rx="2" />
+    <rect x="122" y="110" width="44" height="38" rx="2" />
+    <rect x="170" y="110" width="44" height="38" rx="2" />
+    <rect x="218" y="110" width="28" height="38" rx="2" />
+  </g>
+  <g fill="#bd9762" opacity="0.22">
+    <rect x="74" y="68" width="44" height="38" rx="2" />
+    <rect x="122" y="68" width="44" height="38" rx="2" />
+    <rect x="122" y="110" width="44" height="38" rx="2" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="2">
+    <circle cx="144" cy="87" r="13" />
+    <circle cx="144" cy="87" r="24" opacity="0.45" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="1.5" opacity="0.8">
+    <path d="M96 129c8-14 22-20 34-16 12 4 16 18 28 20" stroke-dasharray="4 5" />
+  </g>
+  <g fill="#bd9762">
+    <circle cx="96" cy="129" r="3" />
+    <circle cx="158" cy="133" r="3" />
+  </g>
+  </g>
+</svg>

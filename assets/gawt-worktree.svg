@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 204" role="img" aria-label="Worktree compartido con varias ramas">
+  <g fill="none" stroke="#bd9762" stroke-width="2" stroke-linecap="round">
+    <path d="M44 150V54" />
+    <path d="M44 78h56c14 0 14 22 28 22h44" />
+    <path d="M44 112h44c14 0 14-20 28-20h44" opacity="0.55" />
+  </g>
+  <g fill="#0e0a06" stroke="#bd9762" stroke-width="2">
+    <circle cx="44" cy="54" r="7" />
+    <circle cx="44" cy="150" r="7" />
+    <circle cx="172" cy="100" r="7" />
+    <circle cx="116" cy="92" r="7" opacity="0.55" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.7">
+    <rect x="152" y="66" width="96" height="68" rx="6" />
+  </g>
+  <g fill="none" stroke="#5c4a34" stroke-width="1.5">
+    <rect x="196" y="40" width="44" height="44" rx="4" />
+  </g>
+  <g fill="none" stroke="#bd9762" stroke-width="1.5">
+    <path d="M196 52h44M196 62h44M196 72h30" opacity="0.7" />
+  </g>
+</svg>
